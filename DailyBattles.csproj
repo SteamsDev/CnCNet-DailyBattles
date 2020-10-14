@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="C:\Users\dev20\source\repos\xna-cncnet-client\References" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Rampastring.Tools">
+      <HintPath>..\..\xna-cncnet-client\References\Rampastring.Tools.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
