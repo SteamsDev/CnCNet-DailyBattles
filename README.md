@@ -1,5 +1,5 @@
 # CnCNet-DailyBattles
-The DailyBattles expansion for the CnCNet Client is a client in itself that allows the user to set up a one-per-day battle system for Skirmish mode. Currently a console application.
+CnCNet/DailyBattles is an unoffocial extension to the CnCNet5 Client made by Rampastring. Its purpose is to emulate a system where a player can play one unique battle per day on their favorite CnC game. It current only supports DTA, but others will be supported in the near future.
 
 This project is currently in a very early stage of development. Any commitments that can be made to the project is greatly appreciated.
 
