@@ -84,8 +84,8 @@ namespace DailyBattles
         public static void Run ( )
         {
             Console.WriteLine("Checking Client Integrity, this might take some time...");
-            string DefaultClientPath = "%USERPROFILE%\Documents\Dawn of the Tiberium Age";
-            string ClientPath = ".";
+            string DefaultClientPath = @"%USERPROFILE%\Documents\Dawn of the Tiberium Age";
+            string ClientPath = DefaultClientPath;
             Console.WriteLine("Checking INI Integrity...");
             if (CheckINIIntegrity(IniIntegrity, ClientPath) == true)
                 Console.WriteLine("INI Integrity Check Complete. All Files Present.");
@@ -102,21 +102,36 @@ namespace DailyBattles
              */
         }
 
-        // This function is meant to go to a directory and scan for file names. If anyone wants to give me some pointers as to how to do that, any help is much appreciated. -SteamsDev
+        // This function is meant to go to a directory and scan for file names. If the implementation is incorrect feel free to give me a few pointers. Thanks! -SteamsDev
         private static bool CheckINIIntegrity (string[] IniString, string ClientPath)
         {
-            return true; 
-        }
-
-        // This function is meant to go to a directory and scan for file names. If anyone wants to give me some pointers as to how to do that, any help is much appreciated. -SteamsDev
-        private static bool CheckMixIntegrity (string[] MixString, string ClientPath)
-        {
+            string IniPath = ClientPath + @"\INI";
+            foreach (string i in IniString)
+            {
+                if (!File.Exists(IniPath + i)) return false;
+            }
             return true;
         }
 
-        // This function is meant to go to a directory and scan for file names. If anyone wants to give me some pointers as to how to do that, any help is much appreciated. -SteamsDev
+        // This function is meant to go to a directory and scan for file names. If the implementation is incorrect feel free to give me a few pointers. Thanks! -SteamsDev
+        private static bool CheckMixIntegrity (string[] MixString, string ClientPath)
+        {
+            string MixPath = ClientPath + @"\MIX";
+            foreach (string i in MixString)
+            {
+                if (!File.Exists(MixPath + i)) return false;
+            }
+            return true;
+        }
+
+        // This function is meant to go to a directory and scan for file names. If the implementation is incorrect feel free to give me a few pointers. Thanks! -SteamsDev
         private static bool CheckExeIntegrity (string[] ExeString, string ClientPath)
         {
+            string ExePath = ClientPath + @"\INI";
+            foreach (string i in ExeString)
+            {
+                if (!File.Exists(ExePath + i)) return false;
+            }
             return true;
         }
     }
